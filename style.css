@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #F1F1F1;  /*light grey*/
+} 
+
+.nav-main {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #FFF;
+	display: flex;
+	/*flex-wrap: wrap;*/ /*doesn't make any difference in code*/
+	z-index: 1000;
+}
+
+.btn-toggle-nav {
+	width: 60px;
+	height: 100%;
+	background-color: #F98f39; /*orange color*/
+	background-image: url("menu.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: center;
+	cursor: pointer;
+}
+
+.btn-toggle-nav:hover {
+	opacity: 0.5;
+}
+
+.nav-main ul{
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 15px;
+	
+}
+
+.nav-main ul li{
+	list-style: none; /*no bullet points*/
+	line-height: 60px;
+}
+
+.nav-main ul li a{
+	display: block;  /*so we can give height, width and this sorte of thing*/
+	height: 100%;   /*100% of the navbar, the container its in, the box is gonna be 100%*/
+	padding: 0 10px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #111;
+	font-family: Arial;
+	font-size: 16px;
+}
+
+.nav-main ul li a:hover{
+	font-weight: bold;
+	background-color: green;
+}
+
+.nav-sidebar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 50px; /*not 60px as the btn is because we wil add 10px padding to make sure the text doesnt go outside*/
+	height: calc(100vh - 60px);
+	padding: 0 5px;
+	background-color: #1b1b1b;
+	z-index: 1000; /*just to make sure it doesn't go under the content*/
+	transition: all 0.4s ease-in-out;
+}
+
+.nav-sidebar ul {
+	padding-top: 15px; /* the entire list drops 15px down*/
+	overflow: hidden; /* it hides the text that goes outside of the container*/
+	visibility: hidden; /* to hide the content inside of the sidebar*/
+
+}
+
+.nav-sidebar ul li {
+	line-height: 60px;
+	list-style: none;
+}
+
+
+.nav-sidebar ul li span, .nav-sidebar ul li a {
+	display: block;
+	height: 60px; /* if we change this height, has to change the .nav-sidebar ul li to match*/
+	padding: 0 10px; /* space between the text and the box*/
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff; /*white color*/
+	font-family: Arial;
+	font-size: 16px;
+	white-space: nowrap; /* it makes sure the text doesn't jump to the next line if there is no space for it*/
+	/*opacity: 0;*/
+	transition: all 0.4s ease-in-out;
+
+}	
+
+.nav-sidebar ul li a:hover {
+	background-color: #222;
+}
+
+
+
+
+
+
+
